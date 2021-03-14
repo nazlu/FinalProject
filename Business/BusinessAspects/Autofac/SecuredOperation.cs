@@ -11,6 +11,8 @@ using Business.Constants;
 
 namespace Business.BusinessAspects.Autofac
 {
+
+    //JWT
     public class SecuredOperation : MethodInterception
     {
         private string[] _roles;
@@ -36,5 +38,5 @@ namespace Business.BusinessAspects.Autofac
             throw new Exception(Messages.AuthorizationDenied);
         }
     }
-   
+
 }

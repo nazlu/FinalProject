@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
+
 namespace Core.Utilities.Interceptors
 {
     public class AspectInterceptorSelector : IInterceptorSelector
@@ -16,8 +17,8 @@ namespace Core.Utilities.Interceptors
             var methodAttributes = type.GetMethod(method.Name)
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
             classAttributes.AddRange(methodAttributes);
-          //  classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger))); tüm kodları loglar
-
+           // classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger))); tüm kodları loglar
+           
             return classAttributes.OrderBy(x => x.Priority).ToArray();
         }
     }
